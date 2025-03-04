@@ -1,29 +1,50 @@
-# GitHub Stats Scraper API
+# GitHub Scraping API
 
-This project uses Puppeteer to scrap the data from github and provide an easy to use API to access the datas.
+This project uses Puppeteer to scrape data from GitHub and provides an easy-to-use API to access the data.
 
 ## Installation
-Just clone the repo and install the dependencies like this :
-```
+
+To get started, clone the repository and install the dependencies:
+
+```bash
 git clone https://github.com/Aitaneuh/github-scraper-api.git
 cd github-scraper-api
 npm install
 ```
 
-## Usage 
-In your github-scraper-api directory, run this command to start node :
-```
+## Usage
+
+In your `github-scraper-api` directory, run the following command to start the server:
+
+```bash
 node server.js
 ```
-And finally, you can get the datas from this URL : `http://localhost:3000/github/torvalds` and it will return you a JSON like this :
-```JSON
+
+Finally, you can access the data by visiting this URL: `http://localhost:3000/github/Aitaneuh`. It will return a JSON response like this:
+
+```json
 {
-  "name": "Linus Torvalds",
-  "bio": "No bio",
-  "followers": "228k",
-  "following": "0",
-  "repos": "8"
+  "name": "Aitaneuh",
+  "bio": "I am learning computer science and software developement. I live in Switzerland.",
+  "followers": "3",
+  "following": "9",
+  "repos": "10",
+  "projects": "0",
+  "packages": "0",
+  "stars": "22",
+  "org": "none",
+  "location": "none",
+  "currentTime": "23:05 (UTC +01:00)",
+  "links": [
+    "https://x.com/Aitaneuh"
+  ]
 }
 ```
 
-### By the way, I am totally open to PR if you want to help me out on this small project.
+## Future Plans
+
+I plan to convert the fields `"repos"`, `"projects"`, `"packages"`, and maybe `"stars"` into a list of objects containing their respective data.
+
+### Contributing
+
+I am totally open to pull requests if you want to help improve this small project!
