@@ -10,6 +10,8 @@ export async function getRepositories(page) {
             repos.push({ name, description, stars, language });
         });
 
+
+        // Note that it only return the 30 firsts ones because these are the one loaded when you open the repos tab and then you have to scroll down to load more
         return repos;
     });
 }
