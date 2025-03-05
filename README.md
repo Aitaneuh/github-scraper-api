@@ -1,6 +1,6 @@
 # GitHub Scraping API
 
-This project uses Puppeteer to scrape data from GitHub and provides an easy-to-use API to access the data of a GitHub profile and its repositories.
+This project uses Puppeteer to scrape data from GitHub and provides an easy-to-use API to access GitHub profile data and repository details.
 
 ## Installation
 
@@ -17,24 +17,24 @@ npm install
 1. Start the server with the following command:
 
 ```bash
-node server.js
+node src/server.js
 ```
 
-2. Once the server is running, you can query the API to get profile or repository information.
+2. Once the server is running, you can query the API to retrieve profile or repository information.
 
 ### 1. **Get GitHub Profile Information**
 
 Access a GitHub user's profile by sending a GET request to the following URL:
 
 ```
-http://localhost:3000/github/:username
+http://localhost:3000/github/profile/:username
 ```
 
-Replace `:username` with the GitHub username of the person you want to get information about.
+Replace `:username` with the GitHub username you want to retrieve information about.
 
 **Example**:
 ```bash
-GET http://localhost:3000/github/Aitaneuh
+GET http://localhost:3000/github/profile/Aitaneuh
 ```
 
 **Response (Example)**:
@@ -58,60 +58,6 @@ GET http://localhost:3000/github/Aitaneuh
       "description": "A small project that creates a little API to get the data of a GitHub profile.",
       "stars": "0",
       "language": "JavaScript"
-    },
-    {
-      "name": "JS-Shell-Utility",
-      "description": "A customizable JavaScript-based shell utility that allows users to execute predefined commands in a console-like environment.",
-      "stars": "0",
-      "language": "JavaScript"
-    },
-    {
-      "name": "Flutter-Structure-Creation",
-      "description": "A PowerShell file that creates all the Flutter structure you need.",
-      "stars": "0",
-      "language": "PowerShell"
-    },
-    {
-      "name": "Aitaneuh",
-      "description": "No description",
-      "stars": "0",
-      "language": "Unknown"
-    },
-    {
-      "name": "Scream",
-      "description": "A Discord Bot to manage the Scream Discord Server, providing an easy environment to find Rocket League Scrims.",
-      "stars": "0",
-      "language": "Python"
-    },
-    {
-      "name": "SQLite-Browser",
-      "description": "SQLite Browser is a tool used to interact with .db files.",
-      "stars": "0",
-      "language": "C#"
-    },
-    {
-      "name": "RL-Replay-Viewer",
-      "description": "A WPF C# app to open Rocket League .replay files without having to open them in Rocket League.",
-      "stars": "0",
-      "language": "C#"
-    },
-    {
-      "name": "SRLC-3.0",
-      "description": "The only Swiss PUG platform for Rocket League!",
-      "stars": "0",
-      "language": "Python"
-    },
-    {
-      "name": "Rocket-Tournament-League-Discord-Bot",
-      "description": "No description",
-      "stars": "0",
-      "language": "Python"
-    },
-    {
-      "name": "2BallChasers",
-      "description": "No description",
-      "stars": "0",
-      "language": "Python"
     }
   ]
 }
@@ -119,17 +65,17 @@ GET http://localhost:3000/github/Aitaneuh
 
 ### 2. **Get Repository Details**
 
-Access the details of a specific repository by sending a GET request to the following URL:
+Retrieve details of a specific repository by sending a GET request to:
 
 ```
-http://localhost:3000/github/:username/:repo
+http://localhost:3000/github/repository/:username/:repo
 ```
 
 Replace `:username` with the GitHub username and `:repo` with the repository name.
 
 **Example**:
 ```bash
-GET http://localhost:3000/github/Aitaneuh/github-scraper-api
+GET http://localhost:3000/github/repository/Aitaneuh/github-scraper-api
 ```
 
 **Response (Example)**:
@@ -145,32 +91,62 @@ GET http://localhost:3000/github/Aitaneuh/github-scraper-api
 }
 ```
 
+### 3. **Get All Repositories of a User**
+
+Retrieve all public repositories of a user by sending a GET request to:
+
+```
+http://localhost:3000/github/all-repositories/:username
+```
+
+Replace `:username` with the GitHub username.
+
+**Example**:
+```bash
+GET http://localhost:3000/github/all-repositories/Aitaneuh
+```
+
+**Response (Example)**:
+```json
+[
+  {
+    "name": "github-scraper-api",
+    "description": "A small project that creates a little API to get the data of a GitHub profile.",
+    "stars": "0",
+    "language": "JavaScript"
+  }
+]
+```
+
 ## Project Structure
 
 ### 1. **Main Files**:
 
 - `server.js`: Contains the Express server code and API routes.
-- `profile.js`: Contains the logic for fetching profile data.
-- `repositories.js`: Contains the logic for fetching public repositories of a user.
-- `repositoryDetails.js`: Contains the logic for fetching detailed information about a specific repository.
+- `profile.js`: Fetches GitHub profile data.
+- `repositories.js`: Fetches a list of repositories of a user.
+- `repositoryDetails.js`: Fetches detailed information about a repository.
+- `allRepositories.js`: Fetches all public repositories of a user.
 
 ### 2. **Features**:
 
-- **`getProfileData(page)`**: Fetches profile information like name, bio, followers, repositories count, and more.
-- **`getRepositories(page)`**: Fetches a list of repositories, including repository name, description, stars, and language.
-- **`getRepositoryDetails(page)`**: Fetches detailed information about a repository, such as commits, forks, contributors, languages used, and last update.
+- **`getProfileData(page)`**: Retrieves profile information such as name, bio, followers, and repositories count.
+- **`getRepositories(page)`**: Retrieves a list of repositories with name, description, stars, and language.
+- **`getRepositoryDetails(page)`**: Retrieves detailed information about a repository, including commits, forks, contributors, and languages.
+- **`getRepositoryAllRepositories(browser, username, pageCount)`**: Retrieves all repositories of a user.
 
 ## Technologies Used
 
-- **Puppeteer**: For scraping data from GitHub pages.
-- **Express**: For setting up the server and handling API requests.
-- **Cors**: To allow requests from different origins.
+- **Puppeteer**: Used for web scraping GitHub data.
+- **Express**: Handles API requests and server routing.
+- **Cors**: Enables cross-origin requests.
 
 ## Future Features
 
 - Include additional data like issues or pull requests.
-- Support for fetching stars and forks for organizations. (Still not sure)
+- Support for fetching stars and forks for organizations.
 
 ## Contributions
 
 Contributions are welcome! Feel free to submit pull requests to improve the project or add new features.
+
