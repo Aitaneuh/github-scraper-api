@@ -45,6 +45,7 @@ GET http://localhost:3000/github/Aitaneuh
   "followers": "4",
   "following": "9",
   "reposCount": "10",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/130589742?v=4",
   "org": "none",
   "location": "none",
   "currentTime": "20:58 (UTC +01:00)",
@@ -167,9 +168,8 @@ GET http://localhost:3000/github/Aitaneuh/github-scraper-api
 
 ## Future Features
 
-- Enhance language detection for repositories.
 - Include additional data like issues or pull requests.
-- Support for fetching stars and forks for organizations.
+- Support for fetching stars and forks for organizations. (Still not sure)
 
 ## Contributions
 

@@ -5,6 +5,7 @@ export async function getProfileData(page) {
         const followers = document.querySelector("a[href$='followers'] span")?.innerText.trim() || "0";
         const following = document.querySelector("a[href$='following'] span")?.innerText.trim() || "0";
         const reposCount = document.querySelector("a[href$='?tab=repositories']")?.innerText.match(/\d+/)?.[0] || "0";
+        const avatarUrl = document.querySelector("img.avatar")?.getAttribute('src') || "Not Found";
         const org = document.querySelector("span.p-org")?.innerText.trim() || "none";
         let location = document.querySelector("span.p-label")?.innerText.trim() || "none";
 
@@ -21,6 +22,6 @@ export async function getProfileData(page) {
         let links = Array.from(document.querySelectorAll("a.Link--primary.wb-break-all"));
         links = links.map(link => link.getAttribute("href") || "none");
 
-        return { name, bio, followers, following, reposCount, org, location, currentTime, links };
+        return { name, bio, followers, following, reposCount, avatarUrl, org, location, currentTime, links };
     });
 }
