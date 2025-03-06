@@ -10,7 +10,6 @@ const app = express();
 app.use(cors());
 const PORT = 3000;
 
-// Crée une instance du navigateur une seule fois pour réutilisation
 let browser;
 const initializeBrowser = async () => {
     if (!browser) {

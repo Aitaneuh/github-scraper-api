@@ -91,7 +91,7 @@ GET http://localhost:3000/github/repository/Aitaneuh/github-scraper-api
 }
 ```
 
-### 3. **Get All Repositories of a User**
+### 3. **Get All Repositories of a User (it can take some time if there are a lot of repositories)**
 
 Retrieve all public repositories of a user by sending a GET request to:
 

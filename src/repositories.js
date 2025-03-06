@@ -12,6 +12,7 @@ export async function getRepositories(page) {
 
 
         // Note that it only return the 30 firsts ones because these are the one loaded when you open the repos tab and then you have to scroll down to load more
+        // use /github/all-repositories/:username if you want every repository
         return repos;
     });
 }
