@@ -8,14 +8,26 @@ import { getRepositoryAllRepositories, getReposPageCount } from "./allRepositori
 
 const app = express();
 app.use(cors());
-const PORT = 3000;
+const PORT = 4000;
+const startTime = Date.now();
 
 let browser;
 const initializeBrowser = async () => {
     if (!browser) {
-        browser = await launch({ headless: true });
+        browser = await launch({
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        });
     }
 };
+
+app.get('/health', (req, res) => {
+    res.json({
+        status: "ok",
+        timestamp: new Date().toISOString(),
+        uptime: Math.floor((Date.now() - startTime) / 1000),
+        version: "1.0.0"
+    });
+});
 
 app.get("/github/profile/:username", async (req, res) => {
     try {
@@ -77,6 +89,6 @@ app.get("/github/all-repositories/:username", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}/github/`);
+    console.log(`[RUNNING] Server running on port ${PORT}`);
 });
 
