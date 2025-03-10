@@ -68,14 +68,14 @@ GET http://localhost:3000/github/profile/Aitaneuh
 Retrieve details of a specific repository by sending a GET request to:
 
 ```
-http://localhost:3000/github/repository/:username/:repo
+http://localhost:4000/github/repository/:username/:repo
 ```
 
 Replace `:username` with the GitHub username and `:repo` with the repository name.
 
 **Example**:
 ```bash
-GET http://localhost:3000/github/repository/Aitaneuh/github-scraper-api
+GET http://localhost:4000/github/repository/Aitaneuh/github-scraper-api
 ```
 
 **Response (Example)**:
@@ -96,14 +96,14 @@ GET http://localhost:3000/github/repository/Aitaneuh/github-scraper-api
 Retrieve all public repositories of a user by sending a GET request to:
 
 ```
-http://localhost:3000/github/all-repositories/:username
+http://localhost:4000/github/all-repositories/:username
 ```
 
 Replace `:username` with the GitHub username.
 
 **Example**:
 ```bash
-GET http://localhost:3000/github/all-repositories/Aitaneuh
+GET http://localhost:4000/github/all-repositories/Aitaneuh
 ```
 
 **Response (Example)**:
@@ -116,6 +116,48 @@ GET http://localhost:3000/github/all-repositories/Aitaneuh
     "language": "JavaScript"
   }
 ]
+```
+
+## Docker Container
+
+If you prefer to run this API inside a Docker container instead of running it locally, you can use the prebuilt image available on Docker Hub. The image is tagged as `aitaneuh/scraper-api`, and it can be pulled and run with Docker.
+
+### 1. **Pull the Docker Image**
+
+To pull the Docker image, use the following command:
+
+```bash
+docker pull aitaneuh/scraper-api:latest
+```
+
+### 2. **Run the Docker Container**
+
+After pulling the image, you can run the Docker container with the following command:
+
+```bash
+docker run -p 4000:4000 aitaneuh/scraper-api:latest
+```
+
+This will start the API inside a Docker container, and you can access it at `http://localhost:4000`.
+
+### 3. **Health Check**
+
+The container includes a basic health check to ensure it is running correctly. You can check the health status by sending a GET request to:
+
+```
+http://localhost:4000/health
+```
+
+If the container is healthy, it will respond with a `ok` status.
+
+**Response (Example)**:
+```json
+{
+  "status": "ok",
+  "timestamp": "2025-03-10T20:56:05.269Z",
+  "uptime": 146,
+  "version": "1.0.0"
+}
 ```
 
 ## Project Structure
@@ -149,4 +191,3 @@ GET http://localhost:3000/github/all-repositories/Aitaneuh
 ## Contributions
 
 Contributions are welcome! Feel free to submit pull requests to improve the project or add new features.
-
