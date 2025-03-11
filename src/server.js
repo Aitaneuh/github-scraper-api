@@ -146,3 +146,6 @@ app.listen(PORT, () => {
     sendConsoleMessage("STARTED", `Server running on port ${PORT}`)
 });
 
+setInterval(() => {
+    sendConsoleMessage("STATUS", `Server is fine. Uptime : ${getUptime(startTime)}`)
+}, 1000000)

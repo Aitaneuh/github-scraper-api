@@ -22,6 +22,9 @@ node src/server.js
 
 2. Once the server is running, you can query the API to retrieve profile or repository information.
 
+
+3. When sending requests, you can watch the console. It should log what happens in real time.
+
 ### 1. **Get GitHub Profile Information**
 
 Access a GitHub user's profile by sending a GET request to the following URL:
