@@ -27,14 +27,14 @@ node src/server.js
 Access a GitHub user's profile by sending a GET request to the following URL:
 
 ```
-http://localhost:3000/github/profile/:username
+http://localhost:4000/github/profile/:username
 ```
 
 Replace `:username` with the GitHub username you want to retrieve information about.
 
 **Example**:
 ```bash
-GET http://localhost:3000/github/profile/Aitaneuh
+GET http://localhost:4000/github/profile/Aitaneuh
 ```
 
 **Response (Example)**:
@@ -155,10 +155,59 @@ If the container is healthy, it will respond with a `ok` status.
 {
   "status": "ok",
   "timestamp": "2025-03-10T20:56:05.269Z",
-  "uptime": 146,
-  "version": "1.0.0"
+  "uptime": "00H 12M 42S",
+  "version": "1.1.0"
 }
 ```
+
+## Other Requests
+
+### 1. **Info**
+
+Retrieve information about the project in general by sending a GET request to:
+
+```
+http://localhost:4000/info
+```
+
+**Example**:
+```bash
+GET http://localhost:4000/info
+```
+
+**Response (Example)**:
+```json
+{
+  "creator": "Aitaneuh",
+  "description": "This API is made to give an easy access to data from github or maybe others in the future",
+  "started_on": "04.03.2025",
+  "github_repo": "https://github.com/Aitaneuh/github-scraper-api",
+  "docker_image": "aitaneuh/scraper-api:latest",
+  "repo_stats": "http://localhost:4000/github/repository/Aitaneuh/github-scraper-api"
+}
+```
+
+### 2. **Uptime**
+
+Retrieve only the uptime of the api in milliseconds by sending a GET request to:
+
+```
+http://localhost:4000/uptime
+```
+
+**Example**:
+```bash
+GET http://localhost:4000/uptime
+```
+
+**Response (Example)**:
+```json
+{
+  "uptime": 10935,
+}
+```
+
+This for example was an uptime of almost 11 seconds.
 
 ## Project Structure
 

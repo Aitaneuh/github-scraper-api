@@ -5,11 +5,14 @@ import { getProfileData } from "./profile.js";
 import { getRepositories } from "./repositories.js";
 import { getRepositoryDetails } from "./repositoryDetails.js";
 import { getRepositoryAllRepositories, getReposPageCount } from "./allRepositories.js";
+import { getUptime } from "./time.js";
 
 const app = express();
 app.use(cors());
 const PORT = 4000;
 const startTime = Date.now();
+const repoName = "github-scraper-api";
+const dockerImageName = "scraper-api"
 
 let browser;
 const initializeBrowser = async () => {
@@ -24,8 +27,25 @@ app.get('/health', (req, res) => {
     res.json({
         status: "ok",
         timestamp: new Date().toISOString(),
-        uptime: Math.floor((Date.now() - startTime) / 1000),
-        version: "1.0.0"
+        uptime: getUptime(startTime),
+        version: "1.1.0"
+    });
+});
+
+app.get('/info', (req, res) => {
+    res.json({
+        creator: "Aitaneuh",
+        description: "This API is made to give an easy access to data from github or maybe others in the future",
+        started_on: "04.03.2025",
+        github_repo: `https://github.com/Aitaneuh/${repoName}`,
+        docker_image: `aitaneuh/${dockerImageName}:latest`,
+        repo_stats: `http://localhost:4000/github/repository/Aitaneuh/${repoName}`
+    });
+});
+
+app.get('/uptime', (req, res) => {
+    res.json({
+        uptime: ((Date.now() - startTime)),
     });
 });
 
@@ -88,7 +108,8 @@ app.get("/github/all-repositories/:username", async (req, res) => {
     }
 });
 
+
 app.listen(PORT, () => {
-    console.log(`[RUNNING] Server running on port ${PORT}`);
+    console.log(`(${new Date().toISOString()}) - [RUNNING] Server running on port ${PORT}`);
 });
 
