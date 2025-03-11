@@ -8,7 +8,7 @@ export function getUptime(startTime) {
 function toCleanTime(time) {
     // convert a second amount into hours minutes and seconds
     let timeSeconds = time % 60
-    let timeMinutes = Math.floor(time / 60)
+    let timeMinutes = Math.floor(time / 60 % 60)
     let timeHours = Math.floor(time / 3600)
     return `${formated(timeHours)}H ${formated(timeMinutes)}M ${formated(timeSeconds)}S`
 }
