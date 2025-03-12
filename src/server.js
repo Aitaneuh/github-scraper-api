@@ -1,22 +1,24 @@
 import express from "express";
 import cors from "cors";
+import fs from "fs";
 import { launch } from "puppeteer";
 import { getProfileData } from "./profile.js";
 import { getRepositories } from "./repositories.js";
 import { getRepositoryDetails } from "./repositoryDetails.js";
 import { getRepositoryAllRepositories, getReposPageCount } from "./allRepositories.js";
 import { getUptime } from "./time.js";
-import { sendConsoleMessage } from "./console_message.js";
+
+import logger from "./logger.js";
 
 // const variable 
 const app = express();
 app.use(cors());
 const PORT = 4000;
-sendConsoleMessage("STARTING", `Port configured on ${PORT}`)
+logger.info(`STARTING Port configured on ${PORT}`)
 
 // to remember when started
 const startTime = Date.now();
-sendConsoleMessage("STARTING", `Start time set to ${startTime}`)
+logger.info(`STARTING Start time set to ${startTime}`)
 
 
 // const text values
@@ -41,7 +43,7 @@ app.get('/health', (req, res) => {
         uptime: getUptime(startTime),
         version: "1.1.0"
     });
-    sendConsoleMessage("GET", "/health")
+    logger.info("GET /health")
 });
 
 // to get project info
@@ -54,7 +56,7 @@ app.get('/info', (req, res) => {
         docker_image: `aitaneuh/${dockerImageName}:latest`,
         repo_stats: `http://localhost:4000/github/repository/Aitaneuh/${repoName}`
     });
-    sendConsoleMessage("GET", "/info")
+    logger.info("GET /info")
 
 });
 
@@ -63,8 +65,19 @@ app.get('/uptime', (req, res) => {
     res.json({
         uptime: ((Date.now() - startTime)),
     });
-    sendConsoleMessage("GET", "/uptime")
+    logger.info("GET /uptime")
 
+});
+
+app.get("/logs", (req, res) => {
+    fs.readFile("logs/app.log", "utf8", (err, data) => {
+        if (err) {
+            logger.error(`Error reading log file: ${err}`);
+            return res.status(500).send("Unable to retrieve logs.");
+        }
+        res.type("text/plain").send(data);
+    });
+    logger.info("GET /logs")
 });
 
 // get github profile info
@@ -87,10 +100,10 @@ app.get("/github/profile/:username", async (req, res) => {
 
         res.json({ ...profileData, repositories });
         const endTaskTime = Date.now()
-        sendConsoleMessage("GET", `/github/profile/${username} - Response time : ${endTaskTime - startTaskTime}ms`)
+        logger.info(`GET /github/profile/${username} - Response time : ${endTaskTime - startTaskTime}ms`)
 
     } catch (error) {
-        sendConsoleMessage("ERROR", `Error fetching profile data:, \n${error}`)
+        logger.info(`ERROR Error fetching profile data:, \n${error}`)
         res.status(500).send("An error occurred while fetching the profile data.");
     }
 });
@@ -111,9 +124,9 @@ app.get("/github/repository/:username/:repo", async (req, res) => {
 
         res.json(repoDetails);
         const endTaskTime = Date.now()
-        sendConsoleMessage("GET", `/github/repository/${username}/${repo} - Response time : ${endTaskTime - startTaskTime}ms`)
+        logger.info(`GET /github/repository/${username}/${repo} - Response time : ${endTaskTime - startTaskTime}ms`)
     } catch (error) {
-        sendConsoleMessage("ERROR", `Error fetching repository details:, \n${error}`)
+        logger.info(`ERROR Error fetching repository details:, \n${error}`)
         res.status(500).send("An error occurred while fetching the repository details.");
     }
 });
@@ -134,18 +147,18 @@ app.get("/github/all-repositories/:username", async (req, res) => {
 
         res.json(allRepositories);
         const endTaskTime = Date.now()
-        sendConsoleMessage("GET", `/github/all-repositories/${username} - Response time : ${endTaskTime - startTaskTime}ms`)
+        logger.info(`GET /github/all-repositories/${username} - Response time : ${endTaskTime - startTaskTime}ms`)
     } catch (error) {
-        sendConsoleMessage("ERROR", `Error fetching all repositories:, \n${error}`)
+        logger.info("ERROR", `Error fetching all repositories:, \n${error}`)
         res.status(500).send("An error occurred while fetching all repositories.");
     }
 });
 
 // server started message
 app.listen(PORT, () => {
-    sendConsoleMessage("STARTED", `Server running on port ${PORT}`)
+    logger.info(`STARTED Server running on port ${PORT}`)
 });
 
 setInterval(() => {
-    sendConsoleMessage("STATUS", `Server is fine. Uptime : ${getUptime(startTime)}`)
+    logger.info(`STATUS Server is fine. Uptime : ${getUptime(startTime)}`)
 }, 1000000)
