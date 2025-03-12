@@ -159,6 +159,7 @@ app.listen(PORT, () => {
     logger.info(`STARTED Server running on port ${PORT}`)
 });
 
+let millisecToMinutes = 1000 * 60;
 setInterval(() => {
     logger.info(`STATUS Server is fine. Uptime : ${getUptime(startTime)}`)
-}, 1000000)
+}, 5 * millisecToMinutes) // put time in minutes
