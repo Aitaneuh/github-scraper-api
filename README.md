@@ -47,7 +47,7 @@ GET http://localhost:4000/github/profile/Aitaneuh
   "bio": "I am learning computer science and software development. I live in Switzerland.",
   "followers": "4",
   "following": "9",
-  "reposCount": "10",
+  "reposCount": "11",
   "avatarUrl": "https://avatars.githubusercontent.com/u/130589742?v=4",
   "org": "none",
   "location": "none",
