@@ -41,7 +41,7 @@ app.get('/health', (req, res) => {
         status: "ok",
         timestamp: new Date().toISOString(),
         uptime: getUptime(startTime),
-        version: "1.1.0"
+        version: "1.2.0"
     });
     logger.info("GET /health")
 });
