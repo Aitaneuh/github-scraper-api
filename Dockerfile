@@ -17,9 +17,5 @@ COPY . .
 # Expose port 4000 (or change it if needed)
 EXPOSE 4000
 
-# Define the healthcheck for the container (optional)
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s \
-    CMD curl -f http://localhost:4000/health || exit 1
-
 # Start the application
 CMD ["node", "src/server.js"]
