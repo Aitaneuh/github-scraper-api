@@ -159,7 +159,7 @@ If the container is healthy, it will respond with a `ok` status.
   "status": "ok",
   "timestamp": "2025-03-10T20:56:05.269Z",
   "uptime": "00H 12M 42S",
-  "version": "1.2.0"
+  "version": "1.3.0"
 }
 ```
 
