@@ -1,0 +1,167 @@
+[33mcommit fb0cc7319a5d1426ca1ad32e8b36ad2400d15696[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Thu Mar 20 23:58:31 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Thu Mar 20 23:58:31 2025 +0100
+
+    Update README.md
+
+[33mcommit 7f15f4e8e595ca17d312a927191aecd4ee788308[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Mon Mar 17 18:29:11 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Mon Mar 17 18:29:11 2025 +0100
+
+    little log timing adjustement
+
+[33mcommit 52c15c663aeb8e2d31110827c3ad1e87ad8f70b4[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Sat Mar 15 18:47:27 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Sat Mar 15 18:47:27 2025 +0100
+
+    updated version in code
+
+[33mcommit 2956a189b9d5bea496e41e9bddeed5ea41c215f5[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Fri Mar 14 17:26:15 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Fri Mar 14 17:26:15 2025 +0100
+
+    everything for the streak 😅
+
+[33mcommit ba5464c1240ef82c27e0d9d0ce3f2f8fea2562b9[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Thu Mar 13 22:50:19 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Thu Mar 13 22:50:19 2025 +0100
+
+    changed version
+
+[33mcommit d3118189523aed182229a86f2e5708f008ced874[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Wed Mar 12 09:53:53 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Wed Mar 12 09:53:53 2025 +0100
+
+    quick change for status interval
+
+[33mcommit 5463ec2c29d8939ecb038ea323e08e705db68b1b[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Wed Mar 12 09:49:54 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Wed Mar 12 09:49:54 2025 +0100
+
+    added logs
+
+[33mcommit bc84d4a7061250e449b81acf824bae2eee04316f[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Tue Mar 11 13:25:53 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Tue Mar 11 13:25:53 2025 +0100
+
+    added modulo for the minutes to getUptime
+
+[33mcommit f02ec006b6890deb6f36014046142b73b287b185[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Tue Mar 11 12:00:40 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Tue Mar 11 12:00:40 2025 +0100
+
+    checkStatus added
+
+[33mcommit 5297eacc34ec969e6340d2380ac13a82461dd4f7[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Tue Mar 11 11:31:50 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Tue Mar 11 11:31:50 2025 +0100
+
+    added comments and logged every actions with a timestamp and a response time for scraping requests
+
+[33mcommit 2520457a024c9d791b4582cda815da76bfc5bd69[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Tue Mar 11 11:01:40 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Tue Mar 11 11:01:40 2025 +0100
+
+    added /info and /uptime + modified /health and created a time.js file
+
+[33mcommit dfe9324fdc9887e0e55cbcb8eae0e3fe79961dc1[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Mon Mar 10 22:07:01 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Mon Mar 10 22:07:01 2025 +0100
+
+    also updated the README
+
+[33mcommit ced96dc0a0baaed292d36d8176df2cb845be1aef[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Mon Mar 10 21:57:03 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Mon Mar 10 21:57:03 2025 +0100
+
+    i created a container with it called aitaneuh/scraper-api on dockerhub
+
+[33mcommit 43cb200031e5c00a87ad93cc2c4463070c9f6ef7[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Thu Mar 6 18:02:14 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Thu Mar 6 18:02:14 2025 +0100
+
+    clarification of all-repositories
+
+[33mcommit 4ff23269006c4704e8deb3226c2fa59807e5722f[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Thu Mar 6 00:00:09 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Thu Mar 6 00:00:09 2025 +0100
+
+    added a way of getting every repository of someone (not limited to 30)
+
+[33mcommit 462e120cd87d076a2d6f21c0798246b0c189a75e[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Wed Mar 5 22:35:06 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Wed Mar 5 22:35:06 2025 +0100
+
+    added a little note to clarify max amount of repositores in the profile list (the max is 30)
+
+[33mcommit 0a045b7baccb61257b86ec110b91b8037f6ad7ef[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Wed Mar 5 21:42:59 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Wed Mar 5 21:42:59 2025 +0100
+
+    added avatarUrl to profile
+
+[33mcommit fb0bd2ddf2427b88b00fa5af31d037c6688c38e6[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Wed Mar 5 21:12:06 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Wed Mar 5 21:12:06 2025 +0100
+
+    changed repositories "count" to a list of them and added a detail repository to the api
+
+[33mcommit 1a63f807772ab6a78f74aec89c5c113c19692675[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Tue Mar 4 23:06:54 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Tue Mar 4 23:06:54 2025 +0100
+
+    Added other stats to the profile and modified the README
+
+[33mcommit 17d95f476cd49f95ff52b1cf5d0160bfcbcd358f[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Tue Mar 4 21:45:13 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Tue Mar 4 21:45:13 2025 +0100
+
+    added a README.md
+
+[33mcommit 18cf754e75b97371ee0f172d332a3698b7b7c24d[m
+Author:     Aitaneuh <ethanb9407@gmail.com>
+AuthorDate: Tue Mar 4 21:27:00 2025 +0100
+Commit:     Aitaneuh <ethanb9407@gmail.com>
+CommitDate: Tue Mar 4 21:27:00 2025 +0100
+
+    first commit
